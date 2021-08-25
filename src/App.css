@@ -1,3 +1,6 @@
+.accordion-button::after {
+  filter: invert(1);
+}
 .App {
   text-align: center;
 }
