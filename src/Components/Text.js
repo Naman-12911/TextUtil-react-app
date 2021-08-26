@@ -55,9 +55,8 @@ function Text(props) {
         <div className="mb-3">
           <textarea
             style={{
-              backgroundColor:
-                props.mode === "dark" ? "rgb(61 97 126)" : "white",
-              color: props.mode === "dark" ? "white" : "b#042743",
+              backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+              color: props.mode === "dark" ? "white" : "#042743",
             }}
             className="form-control"
             id="exampleFormControlTextarea1"
