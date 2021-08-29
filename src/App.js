@@ -6,8 +6,9 @@ import React, { useState } from "react";
 import Alert from "./Components/Alert";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("light"); // Whether dark mode is enabled or not
   const [alert, setAlert] = useState(null);
+
   const showAlert = (message, type) => {
     setAlert({
       msg: message,
@@ -17,22 +18,28 @@ function App() {
       setAlert(null);
     }, 1500);
   };
+
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
-      showAlert("Dark theme has been enabled", "success");
+      showAlert("Dark mode has been enabled", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      showAlert("Light theme has been enabled", "Success");
+      showAlert("Light mode has been enabled", "success");
     }
   };
 
   return (
     <>
       <Router>
-        <Navbar name="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Navbar
+          title="TextUtils"
+          mode={mode}
+          toggleMode={toggleMode}
+          key={new Date()}
+        />
         <Alert alert={alert} />
         <div className="container my-3">
           <Switch>
@@ -40,7 +47,11 @@ function App() {
               <About mode={mode} />
             </Route>
             <Route exact path="/">
-              <Text mode={mode} showAlert={showAlert} />
+              <Text
+                showAlert={showAlert}
+                heading="Try TextUtils - word counter, character counter, remove extra spaces"
+                mode={mode}
+              />
             </Route>
           </Switch>
         </div>

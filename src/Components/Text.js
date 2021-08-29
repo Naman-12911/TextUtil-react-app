@@ -5,26 +5,26 @@ function Text(props) {
   const upcase = () => {
     let newtext = text.toUpperCase();
     setText(newtext);
-    props.showAlert("converted to upper case", "sucess");
+    props.showAlert("converted to upper case", "success");
   };
   // copy the text
   const copytext = () => {
     let copytext = document.getElementById("exampleFormControlTextarea1");
     copytext.select();
     document.execCommand("copy");
-    props.showAlert("The Text is converted", "sucess");
+    props.showAlert("The Text is converted", "success");
   };
   // clear the text
   const cleartext = () => {
     let cleartext = "";
     setText(cleartext);
-    props.showAlert("The Text all  clear ", "sucess");
+    props.showAlert("The Text all  clear ", "success");
   };
   // convert to lowercase
   const lwcase = () => {
     let ntext = text.toLowerCase();
     setText(ntext);
-    props.showAlert("converted to Lower case", "sucess");
+    props.showAlert("converted to Lower case", "success");
   };
   const ochange = (event) => {
     console.log("change");
@@ -34,7 +34,7 @@ function Text(props) {
   const cutextraspcae = () => {
     let newtext = text.split(/[ ]+/);
     setText(newtext.join(" "));
-    props.showAlert("your space is now perfecl fine", "sucess");
+    props.showAlert("your space is now perfecl fine", "success");
   };
 
   const [text, setText] = useState("entre text here");
